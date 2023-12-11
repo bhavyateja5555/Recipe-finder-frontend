@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Agbalumo&display=swap");
+
+.header {
+  background-color: #800080;
+}
+.navbar-brand {
+  color: #ffffff;
+  font-family: "Agbalumo";
+  font-size: 50px;
+}
+.nav-link {
+  color: #ffffff;
+  font-size: 20px;
+}
+.navbar-brand:hover {
+  color: red;
+}
+.nav-link:hover {
+  color: red;
+}
+
+@media (max-width: 767px) {
+    .navbar {
+    background-color: #800080; 
+    }
+    .navbar-nav {
+    margin-top: 10px;
+    }
+    .nav-item {
+    margin-bottom: 8px;
+    margin-top: 10px; 
+    }
+}

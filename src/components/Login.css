@@ -1,0 +1,43 @@
+.form-container{
+    background-color: antiquewhite;
+    margin-left: 50px;
+    padding-left: 100px;
+    padding-right: 160px;
+}
+.login_heading{
+    font-size: 40px;
+    color: red;
+    font-family: "Agbalumo";
+}
+.form-label{
+    font-size: 20px;
+}
+.custom-btn{
+    margin-left: 120px;
+}
+.reg_link{
+    margin-left: 105px;
+}
+
+@media (max-width: 768px) {
+    .form-container {
+      margin-left: 10px;
+      padding: 20px;
+    }
+  
+    .login_heading {
+      font-size: 30px;
+    }
+  
+    .form-label {
+      font-size: 16px;
+    }
+  
+    .custom-btn {
+      margin-left: 70px;
+    }
+  
+    .reg_link {
+      margin-left: 40px;
+    }
+}

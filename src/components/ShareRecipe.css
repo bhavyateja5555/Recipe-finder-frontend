@@ -1,0 +1,37 @@
+.sub_heading{
+    font-family: "Agbalumo";
+    font-size: 40px;
+    color: red;
+}
+.sub_form{
+    margin-left: 400px;
+}
+.custom_label{
+    font-size: 20px;
+}
+
+@media (max-width: 991px) {
+    .sub_heading {
+      font-size: 30px;
+    }
+    .sub_form {
+      margin-left: 220px;
+      margin-right: 20px;
+    }
+    .custom_label {
+      font-size: 16px;
+    }
+}
+
+@media (max-width: 767px) {
+    .sub_heading {
+      font-size: 30px;
+    }
+    .sub_form {
+      margin-left: 120px;
+      margin-right: 20px;
+    }
+    .custom_label {
+      font-size: 16px;
+    }
+}

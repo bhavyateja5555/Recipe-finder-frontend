@@ -1,0 +1,120 @@
+.heading{
+  font-family: "Agbalumo";
+  font-size: 40px;
+  color: red;
+}
+.image{
+  border-radius: 50%;
+}
+.content{
+  padding-top: 100px;
+  padding-left: 60px;
+}
+.custom-pic{
+  padding-top: 30px;
+  padding-left: 80px;
+}
+.para{
+  font-size: 20px;
+  padding-top: 15px;
+}
+.category_link{
+  color: black;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  transition: 250ms all;
+}
+.category_link:hover{
+  transform: scale(1.1);
+}
+.category_img {
+  margin-bottom: 10px;
+  box-shadow: 0px 0px 6px rgba(0,0,0,0.16);
+  overflow: hidden;
+  border-radius: 8px;
+  transition: transform 250ms ease-in-out; 
+}
+.category_img img {
+  object-fit: cover;
+}
+.category{
+  margin-left: 70px;
+}
+.breadcrumb{
+  margin-left: 80px;
+}
+.link_text{
+  text-decoration: none;
+  color: black;
+}
+.copyright{
+  color: red;
+  font-size: 20px;
+}
+.custom-search{
+  margin-left: 350px;
+}
+.custom-link{
+  margin-left: 430px;
+  margin-top: 30px;
+}
+@media (max-width: 991px) {
+  .content {
+    padding-top: 50px;
+    padding-left: 20px;
+    text-align: center;
+  }
+  .custom-pic {
+    padding-top: 30px;
+    padding-left: 20px;
+    text-align: center;
+  }
+  .para {
+    font-size: 18px;
+    padding-top: 15px;
+  }
+  .category {
+    margin-left: 20px;
+  }
+  .breadcrumb {
+    margin-left: 20px;
+  }
+  .custom-search {
+    margin-left: 120px;
+  }
+  .custom-link {
+    margin-left: 100px;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .heading {
+    font-size: 30px;
+  }
+  .image {
+    width: 100%;     
+    height: 300px;
+    width: 300px; 
+    margin: 0 auto; 
+  }
+  .content,
+  .custom-pic {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .category {
+    margin-left: 10px;
+  }
+  .breadcrumb {
+    margin-left: 10px;
+  }
+  .custom-search {
+    margin-left: 20px;
+  }
+  .custom-link {
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+}
