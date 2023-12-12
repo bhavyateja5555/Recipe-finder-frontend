@@ -16,7 +16,7 @@ function UpdateRecipe() {
   useEffect(() => {
     async function fetchRecipeDetails() {
       try {
-        const response = await Axios.get(`http://localhost:4000/api/recipes/${recipeId}`);
+        const response = await Axios.get(`https://recipe-finder-backend3.onrender.com/api/recipes/${recipeId}`);
         setRecipe(response.data);
       } catch (error) {
         console.error('Error fetching recipe details:', error);
@@ -28,7 +28,7 @@ function UpdateRecipe() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await Axios.put(`http://localhost:4000/api/recipes/update-recipe/${recipeId}`, recipe);
+      const response = await Axios.put(`https://recipe-finder-backend3.onrender.com/api/recipes/update-recipe/${recipeId}`, recipe);
       console.log(response.data);
       window.alert('Recipe Updated successfully!');
     } 

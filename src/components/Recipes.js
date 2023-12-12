@@ -9,7 +9,7 @@ function Recipes() {
   useEffect(() => {
     async function fetchAllRecipes() {
       try {
-        const response = await Axios.get('http://localhost:4000/api/recipes/all-recipes');
+        const response = await Axios.get('https://recipe-finder-backend3.onrender.com/api/recipes/all-recipes');
         setAllRecipes(response.data);
       } 
       catch (error) {
@@ -20,7 +20,7 @@ function Recipes() {
   }, []);
 
   const getImageUrl = (imageName) => {
-    return `http://localhost:4000/images/${imageName}`; 
+    return `https://recipe-finder-backend3.onrender.com/images/${imageName}`; 
   };
 
   return (

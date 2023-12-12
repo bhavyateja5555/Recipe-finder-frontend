@@ -14,7 +14,7 @@ function ShareRecipe() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await Axios.post('http://localhost:4000/api/recipes/submit-recipes', recipe);
+      const response = await Axios.post('https://recipe-finder-backend3.onrender.com/api/recipes/submit-recipes', recipe);
       console.log(response.data);
       window.alert('Recipe created successfully!');
     } catch (error) {

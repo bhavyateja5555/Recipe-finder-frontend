@@ -26,7 +26,7 @@ function Registration(){
             alert('Please fill out the fields.');
         } 
         else {
-            Axios.post("http://localhost:4000/userRoute/register", { email, username, password })
+            Axios.post("https://recipe-finder-backend3.onrender.com/userRoute/register", { email, username, password })
                 .then((res) => {
                     console.log(res);
                     alert("Registration successful.")
