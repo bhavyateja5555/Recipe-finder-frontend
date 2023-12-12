@@ -10,7 +10,7 @@ function Search() {
   const [searched, setSearched] = useState(false);
 
   useEffect(() => {
-    Axios.get('https://recipe-finder-backend3.onrender.com/api/recipes/all-recipes')
+    Axios.get('https://recipe-finder-backend5.onrender.com/api/recipes/all-recipes')
       .then((res) => {
         setData(res.data);
       })
@@ -18,7 +18,7 @@ function Search() {
   }, []);
 
   const getImageUrl = (imageName) => {
-    return `https://recipe-finder-backend3.onrender.com/images/${imageName}`;
+    return `https://recipe-finder-backend5.onrender.com/images/${imageName}`;
   };
 
   const handleKeyPress = (event) => {

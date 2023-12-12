@@ -13,7 +13,7 @@ function RecipeDetails() {
   useEffect(() => {
     async function fetchRecipe() {
       try {
-        const response = await Axios.get(`https://recipe-finder-backend3.onrender.com/api/recipes/${recipeId}`);
+        const response = await Axios.get(`https://recipe-finder-backend5.onrender.com/api/recipes/${recipeId}`);
         setRecipe(response.data);
       } catch (error) {
         console.error('Error fetching recipe:', error);
@@ -23,7 +23,7 @@ function RecipeDetails() {
   }, [recipeId]);
 
   const getImageUrl = (imageName) => {
-    return `https://recipe-finder-backend3.onrender.com/images/${imageName}`; 
+    return `https://recipe-finder-backend5.onrender.com/images/${imageName}`; 
   };
 
   const handleDelete = async () => {
@@ -31,7 +31,7 @@ function RecipeDetails() {
       const confirmation = window.confirm('Are you sure you want to delete this recipe?');
       if (confirmation) {
         console.log('Deleting recipe ID:', recipeId);
-        await Axios.delete(`https://recipe-finder-backend3.onrender.com/api/recipes/${recipeId}`);
+        await Axios.delete(`https://recipe-finder-backend5.onrender.com/api/recipes/${recipeId}`);
         console.log('Recipe deleted successfully!');
         alert('Recipe deleted successfully!');
         navigate('/');

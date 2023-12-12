@@ -11,7 +11,7 @@ function RecipesCategory() {
   useEffect(() => {
     async function fetchCategoryRecipes() {
       try {
-        const response = await Axios.get(`https://recipe-finder-backend3.onrender.com/api/recipes/recipes-by-category/${categoryName}`);
+        const response = await Axios.get(`https://recipe-finder-backend5.onrender.com/api/recipes/recipes-by-category/${categoryName}`);
         setCategoryRecipes(response.data);
       } catch (error) {
         console.error('Error fetching recipes:', error);
@@ -21,7 +21,7 @@ function RecipesCategory() {
   }, [categoryName]);
 
   const getImageUrl = (imageName) => {
-    return `https://recipe-finder-backend3.onrender.com/images/${imageName}`; 
+    return `https://recipe-finder-backend5.onrender.com/images/${imageName}`; 
   };
 
   return (
