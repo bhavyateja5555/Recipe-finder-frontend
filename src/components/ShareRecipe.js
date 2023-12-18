@@ -14,10 +14,11 @@ function ShareRecipe() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await Axios.post('https://recipe-finder-backend5.onrender.com/api/recipes/submit-recipes', recipe);
+      const response = await Axios.post('https://recipe-finder-crfi.onrender.com/api/recipes/submit-recipes', recipe);
       console.log(response.data);
       window.alert('Recipe created successfully!');
-    } catch (error) {
+    } 
+    catch (error) {
       console.error('Error submitting recipe:', error);
     }
   };

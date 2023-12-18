@@ -14,9 +14,10 @@ function Home() {
   useEffect(() => {
     async function fetchCategories() {
       try {
-        const response = await Axios.get('https://recipe-finder-backend5.onrender.com/api/recipes'); 
+        const response = await Axios.get('https://recipe-finder-crfi.onrender.com/api/recipes'); 
         setCategories(response.data.slice(0,4));
-      } catch (error) {
+      } 
+      catch (error) {
         console.error('Error fetching categories:', error);
       }
     }
@@ -26,9 +27,10 @@ function Home() {
   useEffect(() => {
     async function fetchLatestRecipes() {
       try {
-        const response = await Axios.get('https://recipe-finder-backend5.onrender.com/api/recipes/latest-recipes');
+        const response = await Axios.get('https://recipe-finder-crfi.onrender.com/api/recipes/latest-recipes');
         setLatestRecipes(response.data);
-      } catch (error) {
+      } 
+      catch (error) {
         console.error('Error fetching latest recipes:', error);
       }
     }
@@ -37,10 +39,20 @@ function Home() {
 
   const fetchAllRecipes = async () => {
     try {
-      const response = await Axios.get('https://recipe-finder-backend5.onrender.com/api/recipes'); 
+      const response = await Axios.get('https://recipe-finder-crfi.onrender.com/api/recipes'); 
       console.log(response.data); 
-    } catch (error) {
+    } 
+    catch (error) {
       console.error('Error fetching all recipes:', error);
+    }
+  };
+
+  const getImageUrl = (imageName) => {
+    if (imageName.startsWith('http')) {
+      return imageName; 
+    } 
+    else {
+      return `https://recipe-finder-crfi.onrender.com/images/${imageName}`; 
     }
   };
 
@@ -71,7 +83,7 @@ function Home() {
           <div key={category._id} class="category_link">
             <Link to={`/recipes-by-category/${category.name}`} className='link_text'>
               <div class="category_img">
-                <img src={`https://recipe-finder-backend5.onrender.com/images/${category.image}`} alt={category.name} width="250" height="250"/> <br/>
+                <img src={getImageUrl(category.image)} alt={category.name} width="250" height="250"/> <br/>
                 <p class="text-center pt-2 pb-3">{category.name}</p>
              </div>
             </Link>
@@ -97,7 +109,7 @@ function Home() {
             <div key={recipe._id} className="category_link">
               <Link to={`/recipes/${recipe._id}`} className="link_text">
                 <div className="category_img">
-                  <img src={`https://recipe-finder-backend5.onrender.com/images/${recipe.image}`} alt={recipe.name} width="250" height="250" /> <br />
+                  <img src={getImageUrl(recipe.image)} alt={recipe.name} width="250" height="250" /> <br />
                   <p className="text-center pt-2 pb-3">{recipe.name}</p>
                 </div>
               </Link>

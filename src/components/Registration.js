@@ -2,13 +2,14 @@
 import {useState} from "react";
 import Axios from "axios";
 import { Link,useNavigate } from "react-router-dom";
+import { useCookies } from "react-cookie";
 import "./Login.css";
 
 function Registration(){
-    const [email, setEmail] = useState("")
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const navigate = useNavigate();
+    const [_, setCookies] = useCookies(["access_token"]);
 
     const handleChange1 = (event) => {
         setUsername(event.target.value)
@@ -16,20 +17,19 @@ function Registration(){
     const handleChange2 = (event) => {
         setPassword(event.target.value)
     }
-    const handleChange3 = (event) => {
-        setEmail(event.target.value)
-    }
+
     const handleSubmit = (event) => {
         event.preventDefault();
         
-        if (email.trim() === '' || username.trim() === '' || password.trim() === '') {
+        if (username.trim() === '' || password.trim() === '') {
             alert('Please fill out the fields.');
         } 
         else {
-            Axios.post("https://recipe-finder-backend5.onrender.com/userRoute/register", { email, username, password })
+            Axios.post("https://recipe-finder-crfi.onrender.com/userRoute/register", { username, password },{ withCredentials: true })
                 .then((res) => {
                     console.log(res);
                     alert("Registration successful.")
+                    setCookies("access_token", res.data.token);
                     navigate("/userRoute/login");
                 })
                 .catch((err) => alert(err));
@@ -42,11 +42,6 @@ function Registration(){
             <form className="form-container" onSubmit={handleSubmit}>
 
                 <h1 className="text-center mt-2 login_heading">Create your account</h1>
-                
-                <div className="mb-4 mt-5">
-                    <label className="form-label mx-3 fw-bold" for="email">Email:</label>
-                    <input type="email" className="form-control" placeholder="Enter email" name="email" id="email" onChange={handleChange3}/>
-                </div>
 
                 <div className="mb-4 mt-5">
                     <label className="form-label mx-3 fw-bold" for="username">Username:</label>

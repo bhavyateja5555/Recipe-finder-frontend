@@ -9,7 +9,7 @@ function Recipes() {
   useEffect(() => {
     async function fetchAllRecipes() {
       try {
-        const response = await Axios.get('https://recipe-finder-backend5.onrender.com/api/recipes/all-recipes');
+        const response = await Axios.get('https://recipe-finder-crfi.onrender.com/api/recipes/all-recipes');
         setAllRecipes(response.data);
       } 
       catch (error) {
@@ -20,7 +20,12 @@ function Recipes() {
   }, []);
 
   const getImageUrl = (imageName) => {
-    return `https://recipe-finder-backend5.onrender.com/images/${imageName}`; 
+    if (imageName.startsWith('http')) {
+      return imageName; 
+    } 
+    else {
+      return `https://recipe-finder-crfi.onrender.com/images/${imageName}`; 
+    }
   };
 
   return (
